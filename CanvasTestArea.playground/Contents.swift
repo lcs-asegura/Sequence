@@ -23,18 +23,34 @@ import PlaygroundSupport
 // Create a new canvas
 let canvas = Canvas(width: 300, height: 500)
 
-// Draw a circle at the origin with radius of 50 pixels
-canvas.drawEllipse(centreX: 0, centreY: 0, width: 50, height: 50)
+//Fill the canvas in blue
+canvas.fillColor = Color.blue
+canvas.drawRectangle(centreX: 0, centreY: 0, width: 1000, height: 1000)
 
 // Show where the origin is
 canvas.drawAxes()
 
 // Draw an ellipse in a different color at the centre of the canvas
-canvas.fillColor = Color.green
-canvas.drawEllipse(centreX: 150, centreY: 250, width: 50, height: 100)
+canvas.fillColor = Color.yellow
+canvas.drawEllipse(centreX: 0, centreY: 500, width: 150, height: 100, borderWidth: 4)
 
-// add a recangle to the top of the screen
-canvas.drawRectangle(centreX: 150, centreY: 400, width: 100, height:150)
+//make the cloud
+canvas.fillColor = Color.white
+canvas.drawEllipse(centreX: 300, centreY: 500, width: 150, height: 100)
+
+//make the cloud
+canvas.fillColor = Color.white
+canvas.drawEllipse(centreX: 350, centreY: 450, width: 150, height: 100)
+
+canvas.drawShapesWithBorders = false
+
+//Rainbow
+canvas.fillColor = Color.red
+canvas.drawEllipse(centreX: 150, centreY: 0, width: 300, height: 500)
+canvas.fillColor = Color.orange
+canvas.drawEllipse(centreX: 150, centreY: 0, width: 250, height: 450)
+
+
 
 // This code is necessary to see the result in the Assistant Editor at right
 PlaygroundPage.current.liveView = canvas.imageView
